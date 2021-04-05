@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link href="dist/images/favicon.png" rel="shortcut icon" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Painel administrativo de monitoramento de ocorrências." />
+        <meta name="author" content="Filipe Equatorial" />
+        <title>Painel Administrativo - LOGIN</title>
+        <!-- CSS DO PAINEL -->
+        <link rel="stylesheet" href="dist/css/painel.css" />
+    </head>
+    <body class="app">
+        <div class="border-b border-theme-24 -mt-10 md:-mt-5 -mx-3 sm:-mx-8 px-3 sm:px-8 pt-3 md:pt-0 mb-10">
+            <div class="top-bar-boxed flex items-center">
+                <a href="" class="-intro-x hidden md:flex">
+                    <img alt="Equatorial Logo" src="dist/images/logodash.png" />
+                </a>
+                <!-- Script Data e Hora -->
+                <div class="-intro-x breadcrumb breadcrumb--light mr-auto">
+                    <script language="JavaScript">
+                        document.write("<font color='#fff' size='3' face='arial'>");
+                        var mydate = new Date();
+                        var year = mydate.getYear();
+                        if (year < 2000) year += year < 1900 ? 1900 : 0;
+                        var day = mydate.getDay();
+                        var month = mydate.getMonth();
+                        var daym = mydate.getDate();
+                        if (daym < 10) daym = "0" + daym;
+                        var dayarray = new Array("Hoje é Domingo", "Hoje é Segunda-feira", "Hoje é Terça-feira", "Hoje é Quarta-feira", "Hoje é Quinta-feira", "Hoje é Sexta-feira", "Hoje é Sábado");
+                        var montharray = new Array(
+                            " de Janeiro de ",
+                            " de Fevereiro de ",
+                            " de Março de ",
+                            "de Abril de ",
+                            "de Maio de ",
+                            "de Junho de",
+                            "de Julho de ",
+                            "de Agosto de ",
+                            "de Setembro de ",
+                            " de Outubro de ",
+                            " de Novembro de ",
+                            " de Dezembro de "
+                        );
+                        document.write("   " + dayarray[day] + ", " + daym + " " + montharray[month] + year + " ");
+                        document.write("</b></i></font>");
+                    </script>
+                </div>
+                <!-- Notificações -->
+                <div class="intro-x dropdown relative mr-4 sm:mr-6">
+                    <div class="dropdown-toggle notification notification--light notification--bullet cursor-pointer"><i data-feather="bell" class="notification__icon"></i></div>
+                    <div class="notification-content dropdown-box mt-8 absolute top-0 right-0 z-10 -mr-10 sm:mr-0">
+                        <div class="notification-content__box dropdown-box__content box">
+                            <div class="notification-content__title">Notificações</div>
+                            <div class="cursor-pointer relative flex items-center">
+                                <div class="w-12 h-12 flex-none image-fit mr-1">
+                                    <img alt="Sinal de Alerta" class="rounded-full" src="dist/images/alerta.png" />
+                                </div>
+                                <div class="ml-2 overflow-hidden">
+                                    <div class="flex items-center">
+                                        <a href="javascript:;" class="font-medium truncate mr-5">Alerta de Risco</a>
+                                        <div class="text-xs text-gray-500 ml-auto whitespace-no-wrap">16:45</div>
+                                    </div>
+                                    <div class="w-full truncate text-gray-600">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#039;s standard dummy text ever since the 1500</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Perfil -->
+                <div class="intro-x dropdown w-8 h-8 relative">
+                    <div class="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in scale-110">
+                        <img alt="Midone Tailwind HTML Admin Template" src="dist/images/filipe.png" />
+                    </div>
+                    <div class="dropdown-box mt-10 absolute w-56 top-0 right-0 z-20">
+                        <div class="dropdown-box__content box bg-theme-38 text-white">
+                            <div class="p-4 border-b border-theme-40">
+                                <div class="font-medium">Filipe Marques</div>
+                                <div class="text-xs text-theme-41">Estagiario</div>
+                            </div>
+                            <div class="p-2">
+                                <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 rounded-md"> <i data-feather="user" class="w-4 h-4 mr-2"></i> Perfil </a>
+                                <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 rounded-md"> <i data-feather="lock" class="w-4 h-4 mr-2"></i> Redefinir Senha </a>
+                            </div>
+                            <div class="p-2 border-t border-theme-40">
+                                <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 rounded-md"> <i data-feather="toggle-right" class="w-4 h-4 mr-2"></i> Sair </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Menu -->
+        <nav class="top-nav">
+            <ul>
+                <li>
+                    <a href="top-menu-dashboard.html" class="top-menu top-menu--active">
+                        <div class="top-menu__icon"><i data-feather="home"></i></div>
+                        <div class="top-menu__title">Página Inicial</div>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- RELATÓRIO -->
+        <div class="content">
+            <div class="grid grid-cols-14 gap-6">
+                <div class="col-span-12 xxl:col-span-9 grid grid-cols-12 gap-6">
+                    <div class="col-span-12 mt-8">
+                        <div class="intro-y flex items-center h-10">
+                            <h2 class="text-lg font-medium truncate mr-5">
+                                Relatório Geral
+                            </h2>
+                            <a href="" class="ml-auto flex text-theme-1"> <i data-feather="refresh-ccw" class="w-4 h-4 mr-3"></i> Recarregar dados </a>
+                        </div>
+                        <div class="grid grid-cols-12 gap-6 mt-5">
+                            <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                                <div class="report-box zoom-in">
+                                    <div class="box p-5">
+                                        <div class="flex">
+                                            <i data-feather="check" class="report-box__icon text-theme-10"></i>
+                                            <div class="ml-auto">
+                                                <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="22% Maior que ontem">22% <i data-feather="chevron-up" class="w-4 h-4"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="text-3xl font-bold leading-8 mt-6">1.169</div>
+                                        <div class="text-base text-gray-600 mt-1">Abertas</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                                <div class="report-box zoom-in">
+                                    <div class="box p-5">
+                                        <div class="flex">
+                                            <i data-feather="send" class="report-box__icon text-theme-10"></i>
+                                            <div class="ml-auto">
+                                                <div class="report-box__indicator bg-theme-6 tooltip cursor-pointer" title="2% Menor que ontem">2% <i data-feather="chevron-down" class="w-4 h-4"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="text-3xl font-bold leading-8 mt-6">984</div>
+                                        <div class="text-base text-gray-600 mt-1">Migradas</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                                <div class="report-box zoom-in">
+                                    <div class="box p-5">
+                                        <div class="flex">
+                                            <i data-feather="activity" class="report-box__icon text-theme-10"></i>
+                                            <div class="ml-auto">
+                                                <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="12% Maior que ontem">12% <i data-feather="chevron-up" class="w-4 h-4"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="text-3xl font-bold leading-8 mt-6">984</div>
+                                        <div class="text-base text-gray-600 mt-1">Processadas</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                                <div class="report-box zoom-in">
+                                    <div class="box p-5">
+                                        <div class="flex">
+                                            <i data-feather="alert-circle" class="report-box__icon text-theme-10"></i>
+                                            <div class="ml-auto">
+                                                <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="22% Maior que ontem">22% <i data-feather="chevron-up" class="w-4 h-4"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="text-3xl font-bold leading-8 mt-6">185</div>
+                                        <div class="text-base text-gray-600 mt-1">Não Migradas</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- TICKETS DE MONITORAMENTO -->
+                    <div class="col-span-12 mt-6">
+                        <div class="intro-y block sm:flex items-center h-10">
+                            <h2 class="text-lg font-medium truncate mr-5">
+                                Painel de Monitoramento
+                            </h2>
+                            <div class="flex items-center sm:ml-auto mt-3 sm:mt-0">
+                                <button class="button box flex items-center text-gray-700"><i data-feather="file-text" class="hidden sm:block w-4 h-4 mr-2"></i> Exportar em Excel</button>
+                                <button class="ml-3 button box flex items-center text-gray-700"><i data-feather="file-text" class="hidden sm:block w-4 h-4 mr-2"></i> Exportar em PDF</button>
+                            </div>
+                        </div>
+                        <!-- PAINEL DE MONITORAMENTO COM DADOS -->
+                        <div class="intro-y datatable-wrapper box p-6 mt-8">
+                            <table class="table table-report table-report--bordered display datatable w-full">
+                                <thead>
+                                    <tr>
+                                        <th class="border-b-2 whitespace-no-wrap">DATA DE ABERTURA</th>
+                                        <th class="border-b-2 text-center whitespace-no-wrap">TOTAL ABERTAS</th>
+                                        <th class="border-b-2 text-center whitespace-no-wrap">MIGRADAS</th>
+                                        <th class="border-b-2 text-center whitespace-no-wrap">STATUS</th>
+                                        <th class="border-b-2 text-center whitespace-no-wrap">AGUARDANDO</th>
+                                        <th class="border-b-2 text-center whitespace-no-wrap">PROCESSADAS</th>
+                                        <th class="border-b-2 text-center whitespace-no-wrap">CANCELADAS</th>
+                                        <th class="border-b-2 text-center whitespace-no-wrap">NÃO MIGRADAS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="border-b">
+                                            <div class="font-medium whitespace-no-wrap">17/12/2020</div>
+                                        </td>
+                                        <td class="text-center border-b">
+                                            <div class="flex sm:justify-center">2.245</div>
+                                        </td>
+                                        <td class="text-center border-b">1.200</td>
+                                        <td class="w-40 border-b">
+                                            <div class="flex items-center sm:justify-center text-theme-6"><i data-feather="alert-circle" class="w-4 h-4 mr-2"></i> CRÍTICO</div>
+                                        </td>
+                                        <td class="border-b w-5">
+                                            <div class="flex sm:justify-center items-center">
+                                                0
+                                            </div>
+                                        </td>
+                                        <td class="border-b w-5">
+                                            <div class="flex sm:justify-center items-center">
+                                                1.200
+                                            </div>
+                                        </td>
+                                        <td class="border-b w-5">
+                                            <div class="flex sm:justify-center items-center">
+                                                1.040
+                                            </div>
+                                        </td>
+                                        <td class="border-b w-5">
+                                            <div class="flex sm:justify-center items-center">
+                                                5
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-b">
+                                            <div class="font-medium whitespace-no-wrap">16/12/2020</div>
+                                        </td>
+                                        <td class="text-center border-b">
+                                            <div class="flex sm:justify-center">
+                                                1.045
+                                            </div>
+                                        </td>
+                                        <td class="text-center border-b">1.045</td>
+                                        <td class="w-40 border-b">
+                                            <div class="flex items-center sm:justify-center text-theme-9"><i data-feather="check-square" class="w-4 h-4 mr-2"></i> OK</div>
+                                        </td>
+                                        <td class="border-b w-5">
+                                            <div class="flex sm:justify-center items-center">
+                                                0
+                                            </div>
+                                        </td>
+                                        <td class="border-b w-5">
+                                            <div class="flex sm:justify-center items-center">
+                                                1.045
+                                            </div>
+                                        </td>
+                                        <td class="border-b w-5">
+                                            <div class="flex sm:justify-center items-center">
+                                                0
+                                            </div>
+                                        </td>
+                                        <td class="border-b w-5">
+                                            <div class="flex sm:justify-center items-center">
+                                                0
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="border-b">
+                                            <div class="font-medium whitespace-no-wrap">15/12/2020</div>
+                                        </td>
+                                        <td class="text-center border-b">
+                                            <div class="flex sm:justify-center">2.245</div>
+                                        </td>
+                                        <td class="text-center border-b">1.200</td>
+                                        <td class="w-40 border-b">
+                                            <div class="flex items-center sm:justify-center text-theme-6"><i data-feather="alert-circle" class="w-4 h-4 mr-2"></i> CRÍTICO</div>
+                                        </td>
+                                        <td class="border-b w-5">
+                                            <div class="flex sm:justify-center items-center">
+                                                0
+                                            </div>
+                                        </td>
+                                        <td class="border-b w-5">
+                                            <div class="flex sm:justify-center items-center">
+                                                1.200
+                                            </div>
+                                        </td>
+                                        <td class="border-b w-5">
+                                            <div class="flex sm:justify-center items-center">
+                                                1.040
+                                            </div>
+                                        </td>
+                                        <td class="border-b w-5">
+                                            <div class="flex sm:justify-center items-center">
+                                                5
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-b">
+                                            <div class="font-medium whitespace-no-wrap">14/12/2020</div>
+                                        </td>
+                                        <td class="text-center border-b">
+                                            <div class="flex sm:justify-center">
+                                                1.045
+                                            </div>
+                                        </td>
+                                        <td class="text-center border-b">1.045</td>
+                                        <td class="w-40 border-b">
+                                            <div class="flex items-center sm:justify-center text-theme-9"><i data-feather="check-square" class="w-4 h-4 mr-2"></i> OK</div>
+                                        </td>
+                                        <td class="border-b w-5">
+                                            <div class="flex sm:justify-center items-center">
+                                                0
+                                            </div>
+                                        </td>
+                                        <td class="border-b w-5">
+                                            <div class="flex sm:justify-center items-center">
+                                                1.045
+                                            </div>
+                                        </td>
+                                        <td class="border-b w-5">
+                                            <div class="flex sm:justify-center items-center">
+                                                0
+                                            </div>
+                                        </td>
+                                        <td class="border-b w-5">
+                                            <div class="flex sm:justify-center items-center">
+                                                0
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- NAVEGAÇÃO -->
+                        <div class="intro-y flex flex-wrap sm:flex-row sm:flex-no-wrap items-center mt-3">
+                            <ul class="pagination">
+                                <li>
+                                    <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevrons-left"></i> </a>
+                                </li>
+                                <li>
+                                    <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevron-left"></i> </a>
+                                </li>
+                                <li><a class="pagination__link" href="">...</a></li>
+                                <li><a class="pagination__link" href="">1</a></li>
+                                <li><a class="pagination__link pagination__link--active" href="">2</a></li>
+                                <li><a class="pagination__link" href="">3</a></li>
+                                <li><a class="pagination__link" href="">...</a></li>
+                                <li>
+                                    <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevron-right"></i> </a>
+                                </li>
+                                <li>
+                                    <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevrons-right"></i> </a>
+                                </li>
+                            </ul>
+                            <select class="w-20 input box mt-3 sm:mt-0">
+                                <option>10</option>
+                                <option>25</option>
+                                <option>35</option>
+                                <option>50</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="dist/js/painel.js"></script>
+    </body>
+</html>
